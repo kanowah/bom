@@ -24,12 +24,14 @@ def authenticate():
             if submit:
                 if username == USERNAME and password == PASSWORD:
                     st.session_state.authenticated = True
-                    st.success("Login successful!")
-                    st.experimental_rerun()
+                    st.success("Login successful! Please refresh the page or click below.")
+                    if st.button("Continue to App"):
+                        pass  # This will trigger a rerun naturally
                 else:
                     st.error("Invalid username or password")
         
-        st.stop()
+        if not st.session_state.authenticated:
+            st.stop()
 
 def process_csv_content(file_content):
     """Process the CSV content using the original logic"""
@@ -100,7 +102,7 @@ def main():
     # Logout button
     if st.button("Logout"):
         st.session_state.authenticated = False
-        st.experimental_rerun()
+        st.success("Logged out successfully! Please refresh the page.")
     
     st.divider()
     

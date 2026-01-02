@@ -28,6 +28,29 @@ footer {
 header {
     visibility: hidden;
 }
+
+/* Hide GitHub profile button in bottom right - more specific selectors */
+.stActionButton, .stActionButton > button,
+[data-testid="stActionButton"],
+[data-testid="manage-app-button"],
+.element-container:has([data-testid="stActionButton"]) {
+    display: none !important;
+}
+
+/* Hide any floating action buttons */
+.floating-button, .fab, .action-button {
+    display: none !important;
+}
+
+/* Hide elements with GitHub-related classes */
+[class*="github"], [class*="GitHub"], [class*="viewerBadge"] {
+    display: none !important;
+}
+
+/* Target the specific bottom-right area */
+.stApp > div:last-child > div:last-child {
+    display: none !important;
+}
 </style>
 """
 

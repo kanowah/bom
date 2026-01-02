@@ -24,11 +24,13 @@ def authenticate():
             if submit:
                 if username == USERNAME and password == PASSWORD:
                     st.session_state.authenticated = True
-                    st.success("Login successful! Please refresh the page or click below.")
-                    if st.button("Continue to App"):
-                        pass  # This will trigger a rerun naturally
                 else:
                     st.error("Invalid username or password")
+        
+        # Show success message outside the form
+        if st.session_state.authenticated:
+            st.success("✅ Login successful! The app will load automatically.")
+            st.balloons()
         
         if not st.session_state.authenticated:
             st.stop()
@@ -100,9 +102,10 @@ def main():
     st.markdown("Convert your EZ_STMT.csv files to clean Excel format")
     
     # Logout button
-    if st.button("Logout"):
-        st.session_state.authenticated = False
-        st.success("Logged out successfully! Please refresh the page.")
+    col1, col2, col3 = st.columns([1, 1, 4])
+    with col1:
+        if st.button("🚪 Logout"):
+            st.session_state.authenticated = False
     
     st.divider()
     

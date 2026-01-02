@@ -7,13 +7,6 @@ import os
 # Hide GitHub fork and profile options
 hide_github_options = """
 <style>
-/* Hide the GitHub icon and fork options */
-.css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
-.styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
-.viewerBadge_text__1JaDK {
-    display: none !important;
-}
-
 /* Hide the main menu button */
 #MainMenu {
     visibility: hidden;
@@ -24,31 +17,16 @@ footer {
     visibility: hidden;
 }
 
-/* Hide header */
-header {
-    visibility: hidden;
-}
-
-/* Hide GitHub profile button in bottom right - more specific selectors */
-.stActionButton, .stActionButton > button,
-[data-testid="stActionButton"],
-[data-testid="manage-app-button"],
-.element-container:has([data-testid="stActionButton"]) {
+/* Hide the GitHub profile button specifically - more targeted */
+[data-testid="manage-app-button"] {
     display: none !important;
 }
 
-/* Hide any floating action buttons */
-.floating-button, .fab, .action-button {
-    display: none !important;
-}
-
-/* Hide elements with GitHub-related classes */
-[class*="github"], [class*="GitHub"], [class*="viewerBadge"] {
-    display: none !important;
-}
-
-/* Target the specific bottom-right area */
-.stApp > div:last-child > div:last-child {
+/* Hide GitHub-related viewer badge */
+.viewerBadge_container__1QSob,
+.styles_viewerBadge__1yB5_,
+.viewerBadge_link__1S137,
+.viewerBadge_text__1JaDK {
     display: none !important;
 }
 </style>

@@ -27,6 +27,11 @@ footer {
     display: none !important;
 }
 
+/* Hide Streamlit Cloud profile button (the one linking to share.streamlit.io/user/) */
+a[href*="share.streamlit.io/user/"] {
+    display: none !important;
+}
+
 /* Hide any GitHub-related buttons and links */
 a[href*="github.com"] {
     display: none !important;
@@ -58,6 +63,16 @@ svg[data-testid="github-icon"] {
 
 /* More aggressive hiding of top toolbar */
 .css-1544g2n, .css-1v0mbdj {
+    display: none !important;
+}
+
+/* Hide the floating action button area in bottom right */
+.stFloatingActionButton {
+    display: none !important;
+}
+
+/* Hide any button that contains the green squares icon (Streamlit profile) */
+button[title*="View your Streamlit profile"] {
     display: none !important;
 }
 </style>

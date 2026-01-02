@@ -4,6 +4,35 @@ from datetime import datetime
 import io
 import os
 
+# Hide GitHub fork and profile options
+hide_github_options = """
+<style>
+/* Hide the GitHub icon and fork options */
+.css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+.styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+.viewerBadge_text__1JaDK {
+    display: none !important;
+}
+
+/* Hide the main menu button */
+#MainMenu {
+    visibility: hidden;
+}
+
+/* Hide Streamlit footer */
+footer {
+    visibility: hidden;
+}
+
+/* Hide header */
+header {
+    visibility: hidden;
+}
+</style>
+"""
+
+st.markdown(hide_github_options, unsafe_allow_html=True)
+
 # Authentication credentials
 USERNAME = "EZDash"
 PASSWORD = "EZDash@2026"

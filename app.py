@@ -17,16 +17,47 @@ footer {
     visibility: hidden;
 }
 
-/* Hide the GitHub profile button specifically - more targeted */
+/* Hide the Fork button in top right */
+[data-testid="stToolbar"] {
+    display: none !important;
+}
+
+/* Hide GitHub profile button in bottom right */
 [data-testid="manage-app-button"] {
     display: none !important;
 }
 
-/* Hide GitHub-related viewer badge */
+/* Hide any GitHub-related buttons and links */
+a[href*="github.com"] {
+    display: none !important;
+}
+
+/* Hide viewer badge and GitHub elements */
 .viewerBadge_container__1QSob,
 .styles_viewerBadge__1yB5_,
 .viewerBadge_link__1S137,
-.viewerBadge_text__1JaDK {
+.viewerBadge_text__1JaDK,
+[class*="viewerBadge"] {
+    display: none !important;
+}
+
+/* Hide toolbar area completely */
+.stToolbar {
+    display: none !important;
+}
+
+/* Hide any elements containing "Fork" text */
+[title*="Fork"], [aria-label*="Fork"] {
+    display: none !important;
+}
+
+/* Hide GitHub icon specifically */
+svg[data-testid="github-icon"] {
+    display: none !important;
+}
+
+/* More aggressive hiding of top toolbar */
+.css-1544g2n, .css-1v0mbdj {
     display: none !important;
 }
 </style>

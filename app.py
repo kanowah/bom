@@ -148,7 +148,7 @@ def process_csv_content(file_content):
     
     # Step 5: Clean DataFrame
     df = df.dropna(axis=1, how="all")  # Drop columns that are entirely empty
-    df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+    df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
     
     # Step 6: Rename first few columns for clarity
     column_names = {

@@ -42,7 +42,7 @@ df = pd.DataFrame(all_data)
 
 # Step 5: Clean DataFrame
 df = df.dropna(axis=1, how="all")  # Drop columns that are entirely empty
-df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+df = df.map(lambda x: x.strip() if isinstance(x, str) else x)
 
 # Step 6: Optional: Rename first few columns for clarity
 df.rename(columns={
